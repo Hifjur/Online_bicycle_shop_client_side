@@ -12,6 +12,8 @@ import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
 import AuthProvider from "./context/AuthProvider/AuthProvider";
 import Bikes from "./Pages/Shared/Bikes/Bikes";
 import Footer from "./Pages/Shared/Footer/Footer";
+import Purchase from "./Pages/Purchase/Purchase";
+import Payment from "./Pages/Payment/Payment";
 
 function App() {
   return (
@@ -35,6 +37,12 @@ function App() {
             {/* <PrivateRoute path="/dashboard">
               <Dashboard/>
             </PrivateRoute> */}
+            <PrivateRoute path="/purchase/:_id">
+              <Purchase/>
+            </PrivateRoute>
+            <PrivateRoute path="/payment">
+              <Payment/>
+            </PrivateRoute>
             <Route exact path="/">
               <Home />
             </Route>

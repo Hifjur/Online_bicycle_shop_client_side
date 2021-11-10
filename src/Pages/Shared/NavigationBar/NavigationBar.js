@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-
+import { Person } from '@mui/icons-material';
 import useAuth from '../../../Hooks/useAuth';
 import { NavLink } from 'react-router-dom';
 
@@ -38,8 +38,8 @@ const Navigation = () => {
                                 <NavLink style={{ textDecoration: 'none', color: 'white' }} to='/dashboard'>
                                     <Button sx={{ backgroundColor: 'rgb(35, 34, 34)', color: '#D3BDBD' }} variant="contained" color="inherit">Dashboard</Button>
                                 </NavLink>
-                                <Typography variant="h6" sx={{ display: 'inline', backgroundColor: '#C54B47', borderBottom: '3px solid white', borderRadius: '10px', padding: '5px', margin: '3px' }}>
-                                    Hi {user.displayName}
+                                <Typography variant="h6" sx={{ display: 'inline', backgroundColor: '#C54B47', borderBottom: '3px solid white', borderRadius: '10px', padding: '9px', margin: '3px' }}>
+                                    <Person /> {user.displayName}
                                 </Typography>
                                 <Button
                                     sx={{ backgroundColor: 'rgb(35, 34, 34)', color: '#D3BDBD' }} variant="contained"
