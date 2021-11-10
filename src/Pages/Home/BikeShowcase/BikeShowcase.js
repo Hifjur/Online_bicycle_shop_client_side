@@ -20,7 +20,7 @@ const BikeShowcase = () => {
         <>
         
             <Container style={{marginTop: '-200px'}}>
-                <h1 style={{color:'white', textDecorationLine: 'underline'}}>OUR TOP BIKES</h1>
+                <h3 style={{color:'white', textDecorationLine: 'underline'}}>OUR TOP BIKES</h3>
                 <Grid container rowSpacing={1} columnSpacing={{ xs: 2, sm: 3, md: 4 }}>
 
                     {
