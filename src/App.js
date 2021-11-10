@@ -10,6 +10,7 @@ import './App.css';
 import Home from "./Pages/Home/Home/Home";
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
 import AuthProvider from "./context/AuthProvider/AuthProvider";
+import Bikes from "./Pages/Shared/Bikes/Bikes";
 
 function App() {
   return (
@@ -23,6 +24,9 @@ function App() {
             </Route>
             <Route path="/login">
               <Login />
+            </Route>
+            <Route path="/bikes">
+              <Bikes></Bikes>
             </Route>
             <Route path="/register">
               <Register />
