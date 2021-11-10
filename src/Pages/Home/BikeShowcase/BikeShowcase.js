@@ -1,9 +1,10 @@
 import { Container, Grid } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import Bike from '../Bike/Bike';
-import NavigationBar from '../NavigationBar/NavigationBar';
+import Bike from '../../Shared/Bike/Bike';
+import NavigationBar from '../../Shared/NavigationBar/NavigationBar'
 
-const Bikes = () => {
+
+const BikeShowcase = () => {
     const [bikes, setBikes] = useState([])
     useEffect(() => {
         fetch('http://localhost:5000/bikes')
@@ -13,15 +14,17 @@ const Bikes = () => {
                 setBikes(data);
             });
     }, [])
+
+    
     return (
         <>
-        <NavigationBar></NavigationBar>
+        
             <Container>
-                <h2>bikes</h2>
+                <h2>Top Seller</h2>
                 <Grid container rowSpacing={1} columnSpacing={{ xs: 2, sm: 3, md: 4 }}>
 
                     {
-                        bikes.map(bike => <Bike key={bike._id} bike={bike}></Bike>)
+                        bikes.map(bike => bike._id <7 && <Bike key={bike._id} bike={bike}></Bike>)
                     }
                 </Grid>
             </Container>
@@ -29,4 +32,4 @@ const Bikes = () => {
     );
 };
 
-export default Bikes;
+export default BikeShowcase;

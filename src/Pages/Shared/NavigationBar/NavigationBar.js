@@ -26,22 +26,23 @@ const Navigation = () => {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                    <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: "rgb(35, 34, 34)" }}>
                         Bikers Corner
                     </Typography>
-                    <NavLink  style={{ textDecoration: 'none', color: 'white', borderBottom: '3px solid white',}} to='/bikes'>
-                        <Button color="inherit">Explore</Button>
+                    <NavLink style={{ textDecoration: 'none', color: 'white', }} to='/bikes'>
+                        <Button sx={{backgroundColor:'rgb(35, 34, 34)', color:'#D3BDBD'}} variant="contained"  color="inherit">Explore</Button>
                     </NavLink>
                     {
                         user?.email ?
                             <Box>
-                                <NavLink style={{ textDecoration: 'none', color: 'white', borderBottom: '3px solid white',}} to='/dashboard'>
-                                    <Button color="inherit">Dashboard</Button>
+                                <NavLink style={{ textDecoration: 'none', color: 'white' }} to='/dashboard'>
+                                    <Button sx={{ backgroundColor: 'rgb(35, 34, 34)', color: '#D3BDBD' }} variant="contained" color="inherit">Dashboard</Button>
                                 </NavLink>
-                                <Typography variant="h6" sx={{ display: 'inline', backgroundColor:'#C54B47' ,borderBottom: '3px solid white', borderRadius: '10px', padding: '5px', margin:'3px' }}>
+                                <Typography variant="h6" sx={{ display: 'inline', backgroundColor: '#C54B47', borderBottom: '3px solid white', borderRadius: '10px', padding: '5px', margin: '3px' }}>
                                     Hi {user.displayName}
                                 </Typography>
                                 <Button
+                                    sx={{ backgroundColor: 'rgb(35, 34, 34)', color: '#D3BDBD' }} variant="contained"
                                     onClick={logout}
                                     color="inherit">Logout</Button>
                             </Box>
