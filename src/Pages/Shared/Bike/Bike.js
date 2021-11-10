@@ -1,5 +1,5 @@
 import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Grid, Typography } from '@mui/material';
-import { green } from '@mui/material/colors';
+
 import React from 'react';
 
 const Bike = ({ bike }) => {
@@ -30,7 +30,7 @@ const Bike = ({ bike }) => {
                     </CardContent>
                 </CardActionArea>
                 <CardActions>
-                    <Button sx={{backgroundColor:'rgb(35, 34, 34)'}} variant="contained" size="small" color="primary">
+                    <Button sx={{backgroundColor:'#C54B47'}} variant="contained" size="small" color="primary">
                         Buy Now!!
                     </Button>
                 </CardActions>

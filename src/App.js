@@ -11,6 +11,7 @@ import Home from "./Pages/Home/Home/Home";
 import PrivateRoute from "./Pages/Login/PrivateRoute/PrivateRoute";
 import AuthProvider from "./context/AuthProvider/AuthProvider";
 import Bikes from "./Pages/Shared/Bikes/Bikes";
+import Footer from "./Pages/Shared/Footer/Footer";
 
 function App() {
   return (
@@ -38,6 +39,7 @@ function App() {
               <Home />
             </Route>
           </Switch>
+          <Footer></Footer>
         </Router>
       </AuthProvider>
     </div>

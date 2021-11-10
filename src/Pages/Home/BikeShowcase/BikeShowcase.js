@@ -1,7 +1,7 @@
 import { Container, Grid } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import Bike from '../../Shared/Bike/Bike';
-import NavigationBar from '../../Shared/NavigationBar/NavigationBar'
+
 
 
 const BikeShowcase = () => {
@@ -19,8 +19,8 @@ const BikeShowcase = () => {
     return (
         <>
         
-            <Container>
-                <h2>Top Seller</h2>
+            <Container style={{marginTop: '-200px'}}>
+                <h1 style={{color:'white', textDecorationLine: 'underline'}}>OUR TOP BIKES</h1>
                 <Grid container rowSpacing={1} columnSpacing={{ xs: 2, sm: 3, md: 4 }}>
 
                     {
