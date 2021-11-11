@@ -15,6 +15,9 @@ import Footer from "./Pages/Shared/Footer/Footer";
 import Purchase from "./Pages/Purchase/Purchase";
 import Payment from "./Pages/Payment/Payment";
 
+import Orders from "./Pages/Dashboard/Oders/Orders";
+import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
+
 function App() {
   return (
     <div className="App">
@@ -34,9 +37,12 @@ function App() {
             <Route path="/register">
               <Register />
             </Route>
-            {/* <PrivateRoute path="/dashboard">
+            <PrivateRoute path="/dashboard">
               <Dashboard/>
-            </PrivateRoute> */}
+            </PrivateRoute>
+            <PrivateRoute path="/orders">
+              <Orders/>
+            </PrivateRoute>
             <PrivateRoute path="/purchase/:_id">
               <Purchase/>
             </PrivateRoute>

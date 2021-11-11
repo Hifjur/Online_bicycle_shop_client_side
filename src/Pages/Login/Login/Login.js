@@ -30,7 +30,7 @@ const Login = () => {
     return (
         <Container>
             <Grid container spacing={2}>
-                <Grid sx={{ mt: 8 }} item xs={12} md={6}>
+                <Grid sx={{ mt: 8 }} item xs={12} md={12}>
                     <Typography variant="body1" gutterBottom>
                         Login
                     </Typography>
@@ -51,6 +51,7 @@ const Login = () => {
                             onBlur={handleOnBlur}
                             variant="standard" />
                         <Button sx={{ width: '75%', m: 1 }} type="submit" variant="contained">Login</Button>
+                        <br/>
                         <NavLink style={{ textDecoration: 'none' }} to="/register">
                             <Button variant="text">New user? Please Register</Button>
                         </NavLink>

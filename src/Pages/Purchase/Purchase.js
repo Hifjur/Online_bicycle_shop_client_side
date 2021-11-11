@@ -35,7 +35,10 @@ const Purchase = () => {
         const orders = {
             ...purchaseInfo,
             productName: name,
-            productUniqueId: _id
+            productUniqueId: _id,
+            status: "pending",
+            price: price,
+            img: img
 
         }
         fetch('http://localhost:5000/orders', {
