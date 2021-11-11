@@ -17,6 +17,8 @@ import Payment from "./Pages/Payment/Payment";
 
 import Orders from "./Pages/Dashboard/Oders/Orders";
 import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
+import AdminRoute from "./Pages/Login/AdminRoute/AdminRoute";
+import AddProducts from "./Pages/Dashboard/AddProducts/AddProducts";
 
 function App() {
   return (
@@ -24,7 +26,7 @@ function App() {
       <AuthProvider>
         <Router>
           <Switch>
-            
+
             <Route path="/home">
               <Home />
             </Route>
@@ -38,16 +40,14 @@ function App() {
               <Register />
             </Route>
             <PrivateRoute path="/dashboard">
-              <Dashboard/>
+              <Dashboard />
             </PrivateRoute>
-            <PrivateRoute path="/orders">
-              <Orders/>
-            </PrivateRoute>
+            
             <PrivateRoute path="/purchase/:_id">
-              <Purchase/>
+              <Purchase />
             </PrivateRoute>
             <PrivateRoute path="/payment">
-              <Payment/>
+              <Payment />
             </PrivateRoute>
             <Route exact path="/">
               <Home />

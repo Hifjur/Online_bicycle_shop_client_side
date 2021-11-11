@@ -1,31 +1,55 @@
+import { Button, Table, TableContainer, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import useAuth from '../../../Hooks/useAuth';
-import Table from '@mui/material/Table';
+import useAuth from '../../../../Hooks/useAuth';
+
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
+
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { NavLink } from 'react-router-dom';
-import { Button } from '@mui/material';
 
-const Orders = () => {
-    const { user, token } = useAuth();
-    const [orders, setOrders] = useState([]);
+const ManageAllOrders = () => {
+    const { token } = useAuth();
+    const [allOrders, setAllOrders] = useState([])
+    const [success, setSucsess] = useState(false);
     useEffect(() => {
-        const url = `http://localhost:5000/orders?email=${user.email}`;
-        fetch(url, {
+        fetch('http://localhost:5000/orders/admin', {
             headers: {
                 'authorization': `Bearer ${token}`
             }
         })
             .then(res => res.json())
-            .then(data => setOrders(data));
-    }, [user.email, token])
+            .then(data => {
+                console.log(data);
+                setAllOrders(data);
+            });
+    }, [token])
+
+    const handleShipping = (orderId) => {
+        const id={orderId}
+        fetch('http://localhost:5000/orders/admin', {
+            method:'PUT',
+            headers: {
+                'authorization' : `Bearer ${token}`,
+                'content-type' : 'application/json'
+            },
+            body: JSON.stringify(id)
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.modifiedCount){
+                setSucsess(true);
+                console.log(data);
+                
+            }
+            
+        })
+    }
     return (
         <div>
-            {orders.length}
+            <Typography variant="h1">Mangae all orders</Typography>
             <TableContainer component={Paper}>
                 <Table sx={{}} aria-label="Appointments List">
                     <TableHead>
@@ -39,23 +63,23 @@ const Orders = () => {
                         </TableRow>
                     </TableHead>
                     <TableBody>
-                        {orders.map((row) => (
+                        {allOrders.map((row) => (
                             <TableRow
                                 key={row._id}
                                 sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
                             >
-                                <TableCell  component="th" scope="row">
-                                    <span style={{fontSize: "20px", color: 'gray'}}>{row.customerName}</span> <br />
-                                    <span style={{color: 'green'}}>Address: {row.road}{row.PO}{row.city}</span>
-                                    </TableCell>
-                                <TableCell align="right"><img style={{height:'100px', width:'125px', borderRadius: '20px'}} src={row.img} alt="" /></TableCell>
+                                <TableCell component="th" scope="row">
+                                    <span style={{ fontSize: "20px", color: 'gray' }}>{row.customerName}</span> <br />
+                                    <span style={{ color: 'green' }}>Address: {row.road}{row.PO}{row.city}</span>
+                                </TableCell>
+                                <TableCell align="right"><img style={{ height: '100px', width: '125px', borderRadius: '20px' }} src={row.img} alt="" /></TableCell>
                                 <TableCell align="right">{row.productName}</TableCell>
                                 <TableCell align="right">{row.price}</TableCell>
                                 <TableCell align="right">{row.status}</TableCell>
                                 <TableCell align="right">
-                                    <NavLink style={{textDecoration: 'none'}} to='/payment'>
-                                        <Button sx={{ backgroundColor: '#C54B47', m: 1 }} variant="contained">Payment</Button>
-                                    </NavLink>
+
+                                    <Button onClick={()=>handleShipping(`${row.orderId}`)} sx={{ backgroundColor: '#C54B47', m: 1 }} variant="contained">Mark as shipped</Button>
+
                                 </TableCell>
 
                             </TableRow>
@@ -67,4 +91,4 @@ const Orders = () => {
     );
 };
 
-export default Orders;
+export default ManageAllOrders;

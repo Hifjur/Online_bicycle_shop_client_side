@@ -31,6 +31,7 @@ const Purchase = () => {
     }
 
     const handleOrderConfirmation = e => {
+        const orderIdgenerator = Math.floor(Math.random() * 100000000000000);
         e.preventDefault();
         const orders = {
             ...purchaseInfo,
@@ -38,7 +39,8 @@ const Purchase = () => {
             productUniqueId: _id,
             status: "pending",
             price: price,
-            img: img
+            img: img,
+            orderId: `${orderIdgenerator}`
 
         }
         fetch('http://localhost:5000/orders', {

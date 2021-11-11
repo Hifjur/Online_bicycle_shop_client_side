@@ -23,13 +23,14 @@ import {
 } from "react-router-dom";
 
 import { NavLink } from 'react-router-dom';
-
-import MakeAdmin from '../MakeAdmin/MakeAdmin';
-import useAuth from '../../../Hooks/useAuth';
-
-import AddProducts from '../AddProducts/AddProducts';
 import DashboardHome from '../DashboardHome/DashboardHome';
+
+import useAuth from '../../../Hooks/useAuth';
 import AdminRoute from '../../Login/AdminRoute/AdminRoute';
+import MakeAdmin from '../MakeAdmin/MakeAdmin';
+import { Person } from '@mui/icons-material';
+import AddBike from '../AddBike/AddBike';
+import ManageBikes from '../ManageBikes/ManageBikes';
 
 
 const drawerWidth = 240;
@@ -38,7 +39,7 @@ function Dashboard(props) {
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
     let { path, url } = useRouteMatch();
-    const { admin } = useAuth();
+    const { admin, user, logout } = useAuth();
 
     const handleDrawerToggle = () => {
         setMobileOpen(!mobileOpen);
@@ -49,19 +50,29 @@ function Dashboard(props) {
             <Toolbar />
             <Divider />
             <div>
-                <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'black' }} to='/orders'>
-                    <Button sx={{ backgroundColor: 'cyan', }} color="inherit">Orders</Button>
-                </NavLink>
-                <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'black' }} to={`${url}`}>
-                    <Button sx={{ backgroundColor: 'cyan', }} color="inherit">Dashboard</Button>
-                </NavLink>
+                {!admin && <Box>
+                    <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'black' }} to='/bikes'>
+                        <Button sx={{ backgroundColor: '#C54B47', }} color="inherit">Explore More</Button>
+                    </NavLink>
+                    <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'black' }} to={`${url}`}>
+                        <Button sx={{ backgroundColor: '#C54B47', }} color="inherit">Dashboard</Button>
+                    </NavLink>
+                </Box>}
                 {admin && <Box>
+                    <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'black' }} to={`${url}`}>
+                        <Button sx={{ backgroundColor: '#C54B47', }} color="inherit">Mange All Orders</Button>
+                    </NavLink>
                     <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'black' }} to={`${url}/makeAdmin`}>
-                        <Button sx={{ backgroundColor: 'cyan', }} color="inherit">Make Admin</Button>
+                        <Button sx={{ backgroundColor: '#C54B47', }} color="inherit">Make Admin</Button>
                     </NavLink>
-                    <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'black' }} to={`${url}/addProducts`}>
-                        <Button sx={{ backgroundColor: 'cyan', }} color="inherit">Add Products</Button>
+                    <NavLink to={`${url}/addproducts`}>
+                        <Button sx={{ backgroundColor: '#C54B47', }} color="inherit">Add Bike</Button>
                     </NavLink>
+                    <NavLink to={`${url}/manageproducts`}>
+                        <Button sx={{ backgroundColor: '#C54B47', }} color="inherit">Manage Bikes</Button>
+                    </NavLink>
+
+
                 </Box>}
             </div>
             <List>
@@ -88,6 +99,7 @@ function Dashboard(props) {
                 sx={{
                     width: { sm: `calc(100% - ${drawerWidth}px)` },
                     ml: { sm: `${drawerWidth}px` },
+                    backgroundColor: 'rgb(35, 34, 34)'
                 }}
             >
                 <Toolbar>
@@ -100,10 +112,27 @@ function Dashboard(props) {
                     >
                         <MenuIcon />
                     </IconButton>
-                    <Typography variant="h6" noWrap component="div">
-                        DashBoard
+                    <Typography variant="h6" component="div" sx={{ flexGrow: 1, color: "D3BDBD" }}>
+                        Dashboard
                     </Typography>
+                    {
+                        user?.email ?
+                            <Box>
+                                <Typography variant="h6" sx={{ display: 'inline', backgroundColor: '#C54B47', borderBottom: '3px solid white', borderRadius: '10px', padding: '9px', margin: '3px' }}>
+                                    <Person /> {user.displayName}
+                                </Typography>
+                                <Button
+                                    sx={{ backgroundColor: 'rgb(35, 34, 34)', color: '#D3BDBD' }} variant="contained"
+                                    onClick={logout}
+                                    color="inherit">Logout</Button>
+                            </Box>
+                            :
+                            <NavLink style={{ textDecoration: 'none', color: 'white' }} to='/login'>
+                                <Button color="inherit">Login</Button>
+                            </NavLink>
+                    }
                 </Toolbar>
+
             </AppBar>
             <Box
                 component="nav"
@@ -143,15 +172,21 @@ function Dashboard(props) {
             >
                 <Toolbar />
                 <Switch>
+
+
                     <Route exact path={path}>
                         <DashboardHome></DashboardHome>
                     </Route>
-                    <AdminRoute path={`${path}/:makeAdmin`}>
+                    <AdminRoute path={`${path}/makeAdmin`}>
                         <MakeAdmin></MakeAdmin>
                     </AdminRoute>
-                    <AdminRoute path={`${path}/:addProducts`}>
-                        <AddProducts></AddProducts>
+                    <AdminRoute path={`${path}/addproducts`}>
+                        <AddBike></AddBike>
                     </AdminRoute>
+                    <AdminRoute path={`${path}/manageproducts`}>
+                        <ManageBikes></ManageBikes>
+                    </AdminRoute>
+
                 </Switch>
             </Box>
         </Box>
