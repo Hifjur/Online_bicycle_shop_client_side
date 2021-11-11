@@ -46,53 +46,42 @@ function Dashboard(props) {
     };
 
     const drawer = (
-        <div>
+        <div  style={{backgroundColor:'rgb(35, 34, 34)', height:'100%'}}>
             <Toolbar />
             <Divider />
             <div>
                 {!admin && <Box>
-                    <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'black' }} to='/bikes'>
+                    <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'white' }} to='/bikes'>
                         <Button sx={{ backgroundColor: '#C54B47', }} color="inherit">Explore More</Button>
                     </NavLink>
-                    <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'black' }} to={`${url}`}>
+                    <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'white' }} to={`${url}`}>
                         <Button sx={{ backgroundColor: '#C54B47', }} color="inherit">Dashboard</Button>
                     </NavLink>
                 </Box>}
                 {admin && <Box>
-                    <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'black' }} to={`${url}`}>
+                    <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'white' }} to={`${url}`}>
                         <Button sx={{ backgroundColor: '#C54B47', }} color="inherit">Mange All Orders</Button>
                     </NavLink>
-                    <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'black' }} to={`${url}/makeAdmin`}>
+                    <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'white' }} to={`${url}/makeAdmin`}>
                         <Button sx={{ backgroundColor: '#C54B47', }} color="inherit">Make Admin</Button>
                     </NavLink>
-                    <NavLink to={`${url}/addproducts`}>
+                    <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'white' }} to={`${url}/addproducts`}>
                         <Button sx={{ backgroundColor: '#C54B47', }} color="inherit">Add Bike</Button>
                     </NavLink>
-                    <NavLink to={`${url}/manageproducts`}>
+                    <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'white' }} to={`${url}/manageproducts`}>
                         <Button sx={{ backgroundColor: '#C54B47', }} color="inherit">Manage Bikes</Button>
                     </NavLink>
 
 
                 </Box>}
             </div>
-            <List>
-                {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                    <ListItem button key={text}>
-                        <ListItemIcon>
-                            {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                        </ListItemIcon>
-                        <ListItemText primary={text} />
-                    </ListItem>
-                ))}
-            </List>
-
         </div>
     );
 
     const container = window !== undefined ? () => window().document.body : undefined;
 
     return (
-        <Box sx={{ display: 'flex' }}>
+        <Box sx={{ display: 'flex', hight:'100%'}}>
             <CssBaseline />
             <AppBar
                 position="fixed"

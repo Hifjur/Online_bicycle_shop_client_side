@@ -25,7 +25,7 @@ const ManageAllOrders = () => {
                 console.log(data);
                 setAllOrders(data);
             });
-    }, [token])
+    }, [token, success])
 
     const handleShipping = (orderId) => {
         const id={orderId}
@@ -49,12 +49,12 @@ const ManageAllOrders = () => {
     }
     return (
         <div>
-            <Typography variant="h1">Mangae all orders</Typography>
+            <Typography variant="h1" sx={{fontWeight:500, padding: '30px', color: 'white', backgroundColor:'rgb(35, 34, 34)'}}>MANAGE ALL ORDERS</Typography>
             <TableContainer component={Paper}>
                 <Table sx={{}} aria-label="Appointments List">
                     <TableHead>
                         <TableRow>
-                            <TableCell>Custormer's Name</TableCell>
+                            <TableCell>Custormer</TableCell>
                             <TableCell align="right">Product Preview</TableCell>
                             <TableCell align="right">Products</TableCell>
                             <TableCell align="right">Price</TableCell>
@@ -70,7 +70,7 @@ const ManageAllOrders = () => {
                             >
                                 <TableCell component="th" scope="row">
                                     <span style={{ fontSize: "20px", color: 'gray' }}>{row.customerName}</span> <br />
-                                    <span style={{ color: 'green' }}>Address: {row.road}{row.PO}{row.city}</span>
+                                    <span style={{ color: 'green' }}>Address: {row.road}  {row.PO} <br />  {row.city} <br /> Phone: {row.phone}</span>
                                 </TableCell>
                                 <TableCell align="right"><img style={{ height: '100px', width: '125px', borderRadius: '20px' }} src={row.img} alt="" /></TableCell>
                                 <TableCell align="right">{row.productName}</TableCell>

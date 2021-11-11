@@ -119,7 +119,7 @@ const Purchase = () => {
                 />
                 <TextField
                     sx={{ width: '70%', m: 1 }}
-                    name="P.O"
+                    name="PO"
                     onBlur={handleOnBlur}
                     label="Postal code"
                     id="outlined-size-small"
@@ -146,8 +146,8 @@ const Purchase = () => {
                 <br />
                 <Button sx={{ backgroundColor: '#C54B47', m: 1 }} type="submit" variant="contained">Payment</Button>
             </form>
-            <NavLink to='/'>
-            <Button variant="text">Explore more bikes</Button>
+            <NavLink style={{textDecoration:'none'}} to='/'>
+            <Button sx={{margin: '20px'}} variant="outlined">Explore more bikes</Button>
             </NavLink>
         </Container>
     );

@@ -8,7 +8,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { NavLink } from 'react-router-dom';
-import { Button } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 
 const Orders = () => {
     const { user, token } = useAuth();
@@ -25,7 +25,7 @@ const Orders = () => {
     }, [user.email, token])
     return (
         <div>
-            {orders.length}
+            <Typography variant="h1" sx={{fontWeight:500, padding: '30px', color: 'white', backgroundColor:'rgb(35, 34, 34)'}}>ORDERS</Typography>
             <TableContainer component={Paper}>
                 <Table sx={{}} aria-label="Appointments List">
                     <TableHead>
