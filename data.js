@@ -12,7 +12,7 @@
 const data = [
 
     {
-        _id:"01",
+        key:"01",
         name:"Hay Bike",
         description: "Mountain Bike with wide tires",
         price:1200,
@@ -20,7 +20,7 @@ const data = [
         catagory: "Mountain"
     },
     {
-        _id:"02",
+        key:"02",
         name:"Canyon",
         description: "Bike with both electric and regular operation",
         price:3200,
@@ -28,7 +28,7 @@ const data = [
         catagory: "Hybrid"
     },
     {
-        _id:"03",
+        key:"03",
         name:"Peggeusi",
         description: "Tour bike for daily drive. Smooth and comfy",
         price:1300,
@@ -36,7 +36,7 @@ const data = [
         catagory: "Tour"
     },
     {
-        _id:"04",
+        key:"04",
         name:"Ivory Light",
         description: "",
         price:5000,
@@ -44,7 +44,7 @@ const data = [
         catagory: "Race"
     },
     {
-        _id:"05",
+        key:"05",
         name:"Hunt",
         description: "Road bike for long drive hunter",
         price:2500,
@@ -52,7 +52,7 @@ const data = [
         catagory: "Tour"
     },
     {
-        _id:"06",
+        key:"06",
         name:"Pheonix",
         description: "A comfortable tour bike for easy commute",
         price:900,
@@ -68,7 +68,7 @@ const data = [
         catagory: "Tour"
     },
     {
-        _id:"08",
+        key:"08",
         name:"Lightning Rod",
         description: "Perfect bike for a long group ride",
         price:2800,
@@ -76,7 +76,7 @@ const data = [
         catagory: "Tour"
     },
     {
-        _id:"09",
+        key:"09",
         name:"Redox",
         description: "Winter biking for snowing mountain",
         price:4500,
@@ -84,7 +84,7 @@ const data = [
         catagory: "Snow"
     },
     {
-        _id:"10",
+        key:"10",
         name:"BMX-15",
         description: "Snow bike with wide tires.",
         price:2600,
@@ -92,7 +92,7 @@ const data = [
         catagory: "Snow"
     },
     {
-        _id:"11",
+        key:"11",
         name:"Argon 18",
         description: "Race like no tomorrow. Light weight",
         price:5500,
@@ -100,7 +100,7 @@ const data = [
         catagory: ""
     },
     {
-        _id:"12",
+        key:"12",
         name:"Pheonix 86",
         description: "Simple Daily driver",
         price:600,

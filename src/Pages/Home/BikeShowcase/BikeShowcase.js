@@ -24,7 +24,7 @@ const BikeShowcase = () => {
                 <Grid container rowSpacing={1} columnSpacing={{ xs: 2, sm: 3, md: 4 }}>
 
                     {
-                        bikes.map(bike => bike._id <7 && <Bike key={bike._id} bike={bike}></Bike>)
+                        bikes.map(bike => bike.key <7 && <Bike key={bike._id} bike={bike}></Bike>)
                     }
                 </Grid>
             </Container>

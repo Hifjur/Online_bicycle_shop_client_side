@@ -9,10 +9,12 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import { NavLink } from 'react-router-dom';
 import { Button, Typography } from '@mui/material';
+import { DeleteOutlineOutlined } from '@mui/icons-material';
 
 const Orders = () => {
     const { user, token } = useAuth();
     const [orders, setOrders] = useState([]);
+    const [success, setSucsess] = useState(false);
     useEffect(() => {
         const url = `http://localhost:5000/orders?email=${user.email}`;
         fetch(url, {
@@ -22,7 +24,39 @@ const Orders = () => {
         })
             .then(res => res.json())
             .then(data => setOrders(data));
-    }, [user.email, token])
+    }, [user.email, token, success])
+
+    const handleDelete = orderId => {
+        setSucsess(false);
+        const id={orderId}
+        if (window.confirm('Are you sure you want to delete this bike from database?')) {
+            
+            const url = `http://localhost:5000/orders`
+            fetch(url, {
+                method: 'DELETE',
+                headers: {
+                    'authorization' : `Bearer ${token}`,
+                    'content-type' : 'application/json'
+                },
+                body: JSON.stringify(id)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.deletedCount > 0) {
+                        setSucsess(true);
+                        console.log(data);
+
+                    }
+
+                })
+            
+        } else {
+            // Do nothing!
+            console.log('Thing was not saved to the database.');
+        }
+
+
+    }
     return (
         <div>
             <Typography variant="h1" sx={{fontWeight:500, padding: '30px', color: 'white', backgroundColor:'rgb(35, 34, 34)'}}>ORDERS</Typography>
@@ -36,6 +70,7 @@ const Orders = () => {
                             <TableCell align="right">Price</TableCell>
                             <TableCell align="right">Status</TableCell>
                             <TableCell align="right">Payment</TableCell>
+                            <TableCell align="right">Cancle</TableCell>
                         </TableRow>
                     </TableHead>
                     <TableBody>
@@ -57,6 +92,7 @@ const Orders = () => {
                                         <Button sx={{ backgroundColor: '#C54B47', m: 1 }} variant="contained">Payment</Button>
                                     </NavLink>
                                 </TableCell>
+                                <TableCell align="right"><Button onClick={()=>handleDelete(row.orderId)} sx={{ backgroundColor: '#C54B47', m: 1 }} variant="contained"><DeleteOutlineOutlined></DeleteOutlineOutlined></Button> </TableCell>
 
                             </TableRow>
                         ))}
