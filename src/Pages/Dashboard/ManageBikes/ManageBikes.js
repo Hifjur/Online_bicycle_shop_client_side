@@ -29,12 +29,14 @@ const ManageBikes = () => {
 
     const handleDelete = id => {
         setSucsess(false);
-        const url = `http://localhost:5000/bikes/${id}`
-        fetch(url, {
+        if (window.confirm('Are you sure you want to delete this bike from database?')) {
+            
+            const url = `http://localhost:5000/bikes/${id}`
+            fetch(url, {
                 method: 'DELETE',
                 headers: {
-                    'authorization' : `Bearer ${token}`,
-                    
+                    'authorization': `Bearer ${token}`,
+
                 },
             })
                 .then(res => res.json())
@@ -46,13 +48,11 @@ const ManageBikes = () => {
                     }
 
                 })
-        // if (window.confirm('Are you sure you want to save this thing into the database?')) {
             
-        //     console.log('Thing was saved to the database.');
-        // } else {
-        //     // Do nothing!
-        //     console.log('Thing was not saved to the database.');
-        // }
+        } else {
+            // Do nothing!
+            console.log('Thing was not saved to the database.');
+        }
 
 
     }

@@ -7,7 +7,7 @@ import useAuth from '../../Hooks/useAuth';
 const Purchase = () => {
     const { _id } = useParams();
     const { user } = useAuth();
-    const initialInfo = { customerName: user.displayName, email: user.email, phone: '' }
+    const initialInfo = { customerName: user.displayName, email: user.email, phone: '' };
     const [purchaseInfo, setPurchaseInfo] = useState(initialInfo);
     const [purchaseComplete, setPurchaseComplete] = useState(false);
     const history = useHistory();

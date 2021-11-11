@@ -1,5 +1,6 @@
 import React from 'react';
 import NavigationBar from '../../Shared/NavigationBar/NavigationBar';
+import AllReviews from '../AllReviews/AllReviews';
 import Banner from '../Banner/Banner';
 import BikeShowcase from '../BikeShowcase/BikeShowcase';
 
@@ -9,6 +10,7 @@ const Home = () => {
             <NavigationBar></NavigationBar>
             <Banner></Banner>
             <BikeShowcase></BikeShowcase>
+            <AllReviews></AllReviews>
         </div>
     );
 };
