@@ -12,11 +12,20 @@ const AddBike = () => {
         const value = e.target.value;
         const newInfo = { ...productInfo };
         newInfo[field] = value;
-        setProdutInfo(newInfo);
+        if(newInfo["key"]<7){
+            setProdutInfo(newInfo);
+        }
+        else
+        {   
+            const keyGenerator = Math.round(Math.random()*1000);
+            const key = keyGenerator.toString();
+            newInfo["key"]= key;
+            setProdutInfo(newInfo);
+        }
     }
 
     const handleOrderConfirmation = e => {
-        
+        setBikeAdded(false);
         e.preventDefault();
         
         fetch('http://localhost:5000/bikes', {
@@ -52,6 +61,15 @@ const AddBike = () => {
                     name="name"
                     onBlur={handleOnBlur}
                     label="Product Name"
+                    id="outlined-size-small"
+                    size="small"
+                />
+                <TextField
+                    required
+                    sx={{ width: '70%', m: 1 }}
+                    name="key"
+                    onBlur={handleOnBlur}
+                    label="Set Key < 7 to appear on home"
                     id="outlined-size-small"
                     size="small"
                 />
