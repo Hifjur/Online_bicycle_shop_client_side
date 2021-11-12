@@ -14,7 +14,7 @@ import { Share } from '@mui/icons-material';
 const SocialPanel = () => {
     const [socialPhoto, setSocialPhoto] = React.useState([])
     React.useEffect(() => {
-        fetch('http://localhost:5000/social')
+        fetch('https://shrouded-tor-90105.herokuapp.com/social')
             .then(res => res.json())
             .then(data => {
                 console.log(data);

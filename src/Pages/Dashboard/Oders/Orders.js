@@ -16,7 +16,7 @@ const Orders = () => {
     const [orders, setOrders] = useState([]);
     const [success, setSucsess] = useState(false);
     useEffect(() => {
-        const url = `http://localhost:5000/orders?email=${user.email}`;
+        const url = `https://shrouded-tor-90105.herokuapp.com/orders?email=${user.email}`;
         fetch(url, {
             headers: {
                 'authorization': `Bearer ${token}`
@@ -31,7 +31,7 @@ const Orders = () => {
         const id={orderId}
         if (window.confirm('Are you sure you want to delete this bike from database?')) {
             
-            const url = `http://localhost:5000/orders`
+            const url = `https://shrouded-tor-90105.herokuapp.com/orders`
             fetch(url, {
                 method: 'DELETE',
                 headers: {

@@ -16,7 +16,7 @@ const ManageAllOrders = () => {
     const [allOrders, setAllOrders] = useState([])
     const [success, setSucsess] = useState(false);
     useEffect(() => {
-        fetch('http://localhost:5000/orders/admin', {
+        fetch('https://shrouded-tor-90105.herokuapp.com/orders/admin', {
             headers: {
                 'authorization': `Bearer ${token}`
             }
@@ -31,7 +31,7 @@ const ManageAllOrders = () => {
     const handleShipping = (orderId) => {
         setSucsess(false);
         const id={orderId}
-        fetch('http://localhost:5000/orders/admin', {
+        fetch('https://shrouded-tor-90105.herokuapp.com/orders/admin', {
             method:'PUT',
             headers: {
                 'authorization' : `Bearer ${token}`,
@@ -55,7 +55,7 @@ const ManageAllOrders = () => {
         const id={orderId}
         if (window.confirm('Are you sure you want to delete this bike from database?')) {
             
-            const url = `http://localhost:5000/orders`
+            const url = `https://shrouded-tor-90105.herokuapp.com/orders`
             fetch(url, {
                 method: 'DELETE',
                 headers: {

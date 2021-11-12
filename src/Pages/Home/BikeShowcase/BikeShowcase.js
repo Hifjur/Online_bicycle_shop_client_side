@@ -7,7 +7,7 @@ import Bike from '../../Shared/Bike/Bike';
 const BikeShowcase = () => {
     const [bikes, setBikes] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/bikes')
+        fetch('https://shrouded-tor-90105.herokuapp.com/bikes')
             .then(res => res.json())
             .then(data => {
                 console.log(data);

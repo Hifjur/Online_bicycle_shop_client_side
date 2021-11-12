@@ -14,7 +14,7 @@ const Purchase = () => {
 
     const [bike, setBikes] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:5000/bikes/${_id}`)
+        fetch(`https://shrouded-tor-90105.herokuapp.com/bikes/${_id}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -43,7 +43,7 @@ const Purchase = () => {
             orderId: `${orderIdgenerator}`
 
         }
-        fetch('http://localhost:5000/orders', {
+        fetch('https://shrouded-tor-90105.herokuapp.com/orders', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

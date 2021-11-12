@@ -29,7 +29,7 @@ const AddBike = () => {
         setBikeAdded(false);
         e.preventDefault();
         
-        fetch('http://localhost:5000/bikes', {
+        fetch('https://shrouded-tor-90105.herokuapp.com/bikes', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

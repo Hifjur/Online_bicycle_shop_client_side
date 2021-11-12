@@ -14,7 +14,7 @@ const ManageBikes = () => {
     const [allBikes, setAllBikes] = useState([])
     const [success, setSucsess] = useState(false);
     useEffect(() => {
-        fetch('http://localhost:5000/bikes', {
+        fetch('https://shrouded-tor-90105.herokuapp.com/bikes', {
             headers: {
                 'authorization': `Bearer ${token}`
             }
@@ -31,7 +31,7 @@ const ManageBikes = () => {
         setSucsess(false);
         if (window.confirm('Are you sure you want to delete this bike from database?')) {
             
-            const url = `http://localhost:5000/bikes/${id}`
+            const url = `https://shrouded-tor-90105.herokuapp.com/bikes/${id}`
             fetch(url, {
                 method: 'DELETE',
                 headers: {

@@ -22,7 +22,7 @@ const AddPhoto = () => {
         
         e.preventDefault();
 
-        fetch('http://localhost:5000/social', {
+        fetch('https://shrouded-tor-90105.herokuapp.com/social', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

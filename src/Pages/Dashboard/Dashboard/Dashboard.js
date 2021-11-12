@@ -53,7 +53,7 @@ function Dashboard(props) {
                         <Button sx={{ backgroundColor: '#C54B47', color:'whtie' }} color="inherit">Explore More</Button>
                     </NavLink>
                     <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'white' }} to={`${url}`}>
-                        <Button sx={{ backgroundColor: '#C54B47', color:'whtie' }} color="inherit">Dashboard</Button>
+                        <Button sx={{ backgroundColor: '#C54B47', color:'whtie' }} color="inherit">My Orders</Button>
                     </NavLink>
                     <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'white' }} to={`${url}/review`}>
                         <Button sx={{ backgroundColor: '#C54B47', color:'whtie' }} color="inherit">Review</Button>

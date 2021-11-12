@@ -52,7 +52,7 @@ const Login = () => {
                             onBlur={handleOnBlur}
                             variant="standard" />
                             <br />
-                        <Button sx={{ backgroundColor: '#C54B47',color:'whtie',width: '75%' }} color="inherit">Login</Button>
+                        <Button sx={{ backgroundColor: '#C54B47',color:'whtie',width: '75%' }} type="submit" color="inherit">Login</Button>
                         <br/>
                         <NavLink style={{ textDecoration: 'none' }} to="/register">
                             <Button variant="text">New user? Please Register</Button>

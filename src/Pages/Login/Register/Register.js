@@ -67,7 +67,7 @@ const Register = () => {
                                 name="password2"
                                 onBlur={handleOnBlur}
                                 variant="standard" />
-                            <Button sx={{ backgroundColor: '#C54B47',color:'whtie',width: '75%' }} color="inherit">Register</Button> <br />
+                            <Button sx={{ backgroundColor: '#C54B47',color:'whtie',width: '75%' }} type="submit" color="inherit">Register</Button> <br />
                             <NavLink
                                 style={{ textDecoration: 'none' }}
                                 to="/login">

@@ -25,7 +25,7 @@ const Review = () => {
         }
         e.preventDefault();
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://shrouded-tor-90105.herokuapp.com/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -47,14 +47,14 @@ const Review = () => {
         <Container>
 
 
-            <Typography variant="h1" sx={{ fontWeight: 500, padding: '30px', color: 'white', marginTop: 3, backgroundColor: 'rgb(35, 34, 34)' }}>Leave A Review</Typography>
+            <Typography variant="h1" sx={{ fontWeight: 500, paddingY: '30px', color: 'white', marginTop: 3, backgroundColor: 'rgb(35, 34, 34)' }}>Leave A Review</Typography>
 
             {reviewAdded && <Alert severity="success">Posted Successfully</Alert>}
 
             <form style={{ backgroundColor: 'white', paddingTop: '20px', height: '500px' }} onSubmit={handlePostingReview}>
 
             <TextField
-                    sx={{ width: '70%', m: 1 }}
+                    sx={{ width: '70%', my: 1 }}
                     name="name"
                     onBlur={handleOnBlur}
                     defaultValue={user.displayName}
@@ -64,7 +64,7 @@ const Review = () => {
                     
                 />
             <TextField
-                    sx={{ width: '70%', m: 1 }}
+                    sx={{ width: '70%', my: 1 }}
                     name="email"
                     onBlur={handleOnBlur}
                     defaultValue={user.email}
@@ -77,7 +77,7 @@ const Review = () => {
                     id="standard-multiline-static"
                     name="review"
                     label="Leave a review"
-                    sx={{ width: '70%', m: 1 }}
+                    sx={{ width: '70%', my: 1 }}
                     onBlur={handleOnBlur}
                     multiline
                     rows={8}
@@ -94,7 +94,7 @@ const Review = () => {
                             }}
                         />
                         <br />
-                <Button sx={{ backgroundColor: '#C54B47', m: 1 }} type="submit" variant="contained">Post Review</Button>
+                <Button sx={{ backgroundColor: '#C54B47', my: 1 }} type="submit" variant="contained">Post Review</Button>
             </form>
             <NavLink style={{ textDecoration: 'none' }} to='/dashboard'>
                 <Button sx={{ margin: '20px' }} variant="outlined">Dashboard</Button>
