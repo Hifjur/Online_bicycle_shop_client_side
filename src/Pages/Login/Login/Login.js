@@ -1,4 +1,5 @@
 
+import { Google } from '@mui/icons-material';
 import { Alert, Button, CircularProgress, Container, Grid, TextField, Typography } from '@mui/material';
 
 import React, { useState } from 'react';
@@ -31,10 +32,10 @@ const Login = () => {
         <Container>
             <Grid container spacing={2}>
                 <Grid sx={{ mt: 8 }} item xs={12} md={12}>
-                    <Typography variant="body1" gutterBottom>
+                    <Typography variant="h2" gutterBottom>
                         Login
                     </Typography>
-                    <form onSubmit={handleLoginSubmit}>
+                    <form style={{hight:'500px'}} onSubmit={handleLoginSubmit}>
                         <TextField
                             sx={{ width: '75%', m: 1 }}
                             id="standard-basic"
@@ -50,7 +51,8 @@ const Login = () => {
                             name="password"
                             onBlur={handleOnBlur}
                             variant="standard" />
-                        <Button sx={{ width: '75%', m: 1 }} type="submit" variant="contained">Login</Button>
+                            <br />
+                        <Button sx={{ backgroundColor: '#C54B47',color:'whtie',width: '75%' }} color="inherit">Login</Button>
                         <br/>
                         <NavLink style={{ textDecoration: 'none' }} to="/register">
                             <Button variant="text">New user? Please Register</Button>
@@ -60,7 +62,7 @@ const Login = () => {
                         {error && <Alert severity="error">{error}</Alert>}
                     </form>
                     <p style={{color:"gray", fontWeight:800}}>___________________________________</p>
-                    <Button onClick={handleGoogleSignIn} sx={{backgroundColor:"orange"}} variant="contained">Sign In With Google</Button>
+                    <Button onClick={handleGoogleSignIn} sx={{backgroundColor:"orange"}} variant="contained"><Google sx={{padding:2}}></Google></Button>
                 </Grid>
                 
             </Grid>

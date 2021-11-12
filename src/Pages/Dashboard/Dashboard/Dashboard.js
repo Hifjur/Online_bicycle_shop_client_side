@@ -46,34 +46,34 @@ function Dashboard(props) {
             <Divider />
             <div>
                 <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'white' }} to='/home'>
-                    <Button sx={{ backgroundColor: '#C54B47', }} color="inherit">Home Page</Button>
+                    <Button sx={{ backgroundColor: '#C54B47', color:'whtie'  }} color="inherit">Home Page</Button>
                 </NavLink>
                 {!admin && <Box>
                     <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'white' }} to='/bikes'>
-                        <Button sx={{ backgroundColor: '#C54B47', }} color="inherit">Explore More</Button>
+                        <Button sx={{ backgroundColor: '#C54B47', color:'whtie' }} color="inherit">Explore More</Button>
                     </NavLink>
                     <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'white' }} to={`${url}`}>
-                        <Button sx={{ backgroundColor: '#C54B47', }} color="inherit">Dashboard</Button>
+                        <Button sx={{ backgroundColor: '#C54B47', color:'whtie' }} color="inherit">Dashboard</Button>
                     </NavLink>
                     <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'white' }} to={`${url}/review`}>
-                        <Button sx={{ backgroundColor: '#C54B47', }} color="inherit">Review</Button>
+                        <Button sx={{ backgroundColor: '#C54B47', color:'whtie' }} color="inherit">Review</Button>
                     </NavLink>
                     <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'white' }} to='/social'>
-                        <Button sx={{ backgroundColor: '#C54B47', }} color="inherit">Make Social Post</Button>
+                        <Button sx={{ backgroundColor: '#C54B47',color:'whtie'  }} color="inherit">Make Social Post</Button>
                     </NavLink>
                 </Box>}
                 {admin && <Box>
                     <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'white' }} to={`${url}`}>
-                        <Button sx={{ backgroundColor: '#C54B47', }} color="inherit">Mange All Orders</Button>
+                        <Button sx={{ backgroundColor: '#C54B47',color:'whtie'  }} color="inherit">Mange All Orders</Button>
                     </NavLink>
                     <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'white' }} to={`${url}/makeAdmin`}>
-                        <Button sx={{ backgroundColor: '#C54B47', }} color="inherit">Make Admin</Button>
+                        <Button sx={{ backgroundColor: '#C54B47',color:'whtie'  }} color="inherit">Make Admin</Button>
                     </NavLink>
                     <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'white' }} to={`${url}/addproducts`}>
-                        <Button sx={{ backgroundColor: '#C54B47', }} color="inherit">Add Bike</Button>
+                        <Button sx={{ backgroundColor: '#C54B47', color:'whtie' }} color="inherit">Add Bike</Button>
                     </NavLink>
                     <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'white' }} to={`${url}/manageproducts`}>
-                        <Button sx={{ backgroundColor: '#C54B47', }} color="inherit">Manage Bikes</Button>
+                        <Button sx={{ backgroundColor: '#C54B47',color:'whtie'  }} color="inherit">Manage Bikes</Button>
                     </NavLink>
 
 

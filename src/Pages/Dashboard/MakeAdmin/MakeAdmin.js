@@ -1,4 +1,4 @@
-import { Alert, Button, TextField } from '@mui/material';
+import { Alert, Button, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import useAuth from '../../../Hooks/useAuth';
 
@@ -33,8 +33,8 @@ const MakeAdmin = () => {
     }
     return (
         <div>
-            <h2>Make an Admin</h2>
-            <form onSubmit={handleSubmit}>
+            <Typography variant="h1" sx={{fontWeight:500, padding: '30px', color: 'white', marginTop: 3, backgroundColor:'rgb(35, 34, 34)'}}>Make an Admin</Typography>
+            <form style={{backgroundColor: 'white', paddingTop: '20px', height: '500px'}} onSubmit={handleSubmit}>
                 <TextField
                 sx={{width:'75%'}}
                     id="standard-basic"
@@ -42,7 +42,8 @@ const MakeAdmin = () => {
                     type="email"
                     onBlur={handleOnBlur}
                     variant="standard" />
-                <Button type="submit" variant="contained">Make Admin</Button>
+                    <br />
+                <Button sx={{ margin:20, backgroundColor: '#C54B47', color:'whtie' }} color="inherit" type="submit" variant="contained">Make Admin</Button>
             </form>
             {success && <Alert severity="success">Admin Assigning Successful</Alert>}
         </div>
