@@ -3,39 +3,35 @@ import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 
-const Review = () => {
+const AddPhoto = () => {
     const { user } = useAuth();
-    const initialInfo = { customerName: user.displayName, email: user.email};
-    const [review, setReview] = useState(initialInfo)
-    const [reviewAdded, setReviewAdded] = useState(false);
-    const [starValue, setStarValue] = React.useState(0);
+    const initialInfo = { author: user.displayName, email: user.email};
+    const [socialData, setSocialData] = useState(initialInfo)
+    const [photoAdded, setPhotoAdded] = useState(false);
 
     const handleOnBlur = e => {
         const field = e.target.name;
         const value = e.target.value;
-        const newInfo = { ...review };
+        const newInfo = { ...socialData };
         newInfo[field] = value;
-        setReview(newInfo);
+        setSocialData(newInfo);
     }
 
     const handlePostingReview = e => {
-        const reviewFinal = {
-            ...review,
-            star: starValue
-        }
+        
         e.preventDefault();
 
-        fetch('http://localhost:5000/reviews', {
+        fetch('http://localhost:5000/social', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(reviewFinal)
+            body: JSON.stringify(socialData)
         })
             .then(res => res.json())
             .then(data => {
                 if (data.insertedId) {
-                    setReviewAdded(true);
+                    setPhotoAdded(true);
 
 
                 }
@@ -47,15 +43,15 @@ const Review = () => {
         <Container>
 
 
-            <Typography variant="h1" sx={{ fontWeight: 500, padding: '30px', color: 'white', marginTop: 3, backgroundColor: 'rgb(35, 34, 34)' }}>Leave A Review</Typography>
+            <Typography variant="h1" sx={{ fontWeight: 500, padding: '30px', color: 'white', marginTop: 3, backgroundColor: 'rgb(35, 34, 34)' }}>MAKE A POST</Typography>
 
-            {reviewAdded && <Alert severity="success">Posted Successfully</Alert>}
+            {photoAdded && <Alert severity="success">Posted Successfully</Alert>}
 
             <form style={{ backgroundColor: 'white', paddingTop: '20px', height: '500px' }} onSubmit={handlePostingReview}>
 
             <TextField
                     sx={{ width: '70%', m: 1 }}
-                    name="name"
+                    name="author"
                     onBlur={handleOnBlur}
                     defaultValue={user.displayName}
                     label="Name"
@@ -66,17 +62,27 @@ const Review = () => {
             <TextField
                     sx={{ width: '70%', m: 1 }}
                     name="email"
-                    onBlur={handleOnBlur}
                     defaultValue={user.email}
-                    label="Name"
+                    onBlur={handleOnBlur}
+                    label="Email"
+                    id="standard-basic"
+                    variant="standard"
+                    
+                />
+                <TextField
+                    sx={{ width: '70%', m: 1 }}
+                    name="title"
+                    onBlur={handleOnBlur}
+                    
+                    label="Caption"
                     id="standard-basic"
                     variant="standard"
                     
                 />
                 <TextField
                     id="standard-multiline-static"
-                    name="review"
-                    label="Leave a review"
+                    name="img"
+                    label="Link to Your picture. Reccomnended size is 500x400 for optimal layout in the home page image box"
                     sx={{ width: '70%', m: 1 }}
                     onBlur={handleOnBlur}
                     multiline
@@ -85,16 +91,8 @@ const Review = () => {
                     variant="standard"
                 />
                 <br />
-                <Typography variant="body1" component="legend">Rate Us!!</Typography>
-                        <Rating
-                            name="simple-controlled"
-                            value={starValue}
-                            onChange={(event, newValue) => {
-                                setStarValue(newValue);
-                            }}
-                        />
-                        <br />
-                <Button sx={{ backgroundColor: '#C54B47', m: 1 }} type="submit" variant="contained">Post Review</Button>
+                
+                <Button sx={{ backgroundColor: '#C54B47', m: 1 }} type="submit" variant="contained">Post Picture</Button>
             </form>
             <NavLink style={{ textDecoration: 'none' }} to='/dashboard'>
                 <Button sx={{ margin: '20px' }} variant="outlined">Dashboard</Button>
@@ -103,4 +101,4 @@ const Review = () => {
     );
 };
 
-export default Review;
+export default AddPhoto;

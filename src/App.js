@@ -19,6 +19,7 @@ import Orders from "./Pages/Dashboard/Oders/Orders";
 import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
 import AdminRoute from "./Pages/Login/AdminRoute/AdminRoute";
 import AddProducts from "./Pages/Dashboard/AddProducts/AddProducts";
+import AddPhoto from "./Pages/AddPhoto/AddPhoto";
 
 function App() {
   return (
@@ -41,6 +42,9 @@ function App() {
             </Route>
             <PrivateRoute path="/dashboard">
               <Dashboard />
+            </PrivateRoute>
+            <PrivateRoute path="/social">
+              <AddPhoto></AddPhoto>
             </PrivateRoute>
             
             <PrivateRoute path="/purchase/:_id">
