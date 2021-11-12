@@ -3,6 +3,7 @@ import NavigationBar from '../../Shared/NavigationBar/NavigationBar';
 import AllReviews from '../AllReviews/AllReviews';
 import Banner from '../Banner/Banner';
 import BikeShowcase from '../BikeShowcase/BikeShowcase';
+import SocialPanel from '../SocialPanel/SocialPanel';
 
 const Home = () => {
     return (
@@ -11,6 +12,7 @@ const Home = () => {
             <Banner></Banner>
             <BikeShowcase></BikeShowcase>
             <AllReviews></AllReviews>
+            <SocialPanel></SocialPanel>
         </div>
     );
 };

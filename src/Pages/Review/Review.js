@@ -1,4 +1,4 @@
-import { Alert, Button, Container, TextField, Typography } from '@mui/material';
+import { Alert, Button, Container, Rating, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
@@ -8,6 +8,7 @@ const Review = () => {
     const initialInfo = { customerName: user.displayName, email: user.email};
     const [review, setReview] = useState(initialInfo)
     const [reviewAdded, setReviewAdded] = useState(false);
+    const [starValue, setStarValue] = React.useState(0);
 
     const handleOnBlur = e => {
         const field = e.target.name;
@@ -17,8 +18,11 @@ const Review = () => {
         setReview(newInfo);
     }
 
-    const handleOrderConfirmation = e => {
-
+    const handlePostingReview = e => {
+        const reviewFinal = {
+            ...review,
+            star: starValue
+        }
         e.preventDefault();
 
         fetch('http://localhost:5000/reviews', {
@@ -26,7 +30,7 @@ const Review = () => {
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(review)
+            body: JSON.stringify(reviewFinal)
         })
             .then(res => res.json())
             .then(data => {
@@ -47,7 +51,7 @@ const Review = () => {
 
             {reviewAdded && <Alert severity="success">Posted Successfully</Alert>}
 
-            <form style={{ backgroundColor: 'white', paddingTop: '20px', height: '500px' }} onSubmit={handleOrderConfirmation}>
+            <form style={{ backgroundColor: 'white', paddingTop: '20px', height: '500px' }} onSubmit={handlePostingReview}>
 
             <TextField
                     sx={{ width: '70%', m: 1 }}
@@ -81,6 +85,15 @@ const Review = () => {
                     variant="standard"
                 />
                 <br />
+                <Typography variant="body1" component="legend">Rate Us!!</Typography>
+                        <Rating
+                            name="simple-controlled"
+                            value={starValue}
+                            onChange={(event, newValue) => {
+                                setStarValue(newValue);
+                            }}
+                        />
+                        <br />
                 <Button sx={{ backgroundColor: '#C54B47', m: 1 }} type="submit" variant="contained">Post Review</Button>
             </form>
             <NavLink style={{ textDecoration: 'none' }} to='/dashboard'>

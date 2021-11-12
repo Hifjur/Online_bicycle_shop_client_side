@@ -42,10 +42,13 @@ function Dashboard(props) {
     };
 
     const drawer = (
-        <div  style={{backgroundColor:'rgb(35, 34, 34)', height:'100%'}}>
+        <div style={{ backgroundColor: 'rgb(35, 34, 34)', height: '100%' }}>
             <Toolbar />
             <Divider />
             <div>
+                <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'white' }} to='/home'>
+                    <Button sx={{ backgroundColor: '#C54B47', }} color="inherit">Home Page</Button>
+                </NavLink>
                 {!admin && <Box>
                     <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'white' }} to='/bikes'>
                         <Button sx={{ backgroundColor: '#C54B47', }} color="inherit">Explore More</Button>
@@ -80,7 +83,7 @@ function Dashboard(props) {
     const container = window !== undefined ? () => window().document.body : undefined;
 
     return (
-        <Box sx={{ display: 'flex', hight:'100%'}}>
+        <Box sx={{ display: 'flex', hight: '100%' }}>
             <CssBaseline />
             <AppBar
                 position="fixed"
@@ -165,7 +168,7 @@ function Dashboard(props) {
                     <PrivateRoute exact path={path}>
                         <DashboardHome></DashboardHome>
                     </PrivateRoute>
-                    
+
                     <PrivateRoute path={`${path}/review`}>
                         <Review></Review>
                     </PrivateRoute>

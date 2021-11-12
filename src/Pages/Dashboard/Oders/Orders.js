@@ -81,7 +81,7 @@ const Orders = () => {
                             >
                                 <TableCell  component="th" scope="row">
                                     <span style={{fontSize: "20px", color: 'gray'}}>{row.customerName}</span> <br />
-                                    <span style={{color: 'green'}}>Address: {row.road}{row.PO}{row.city}</span>
+                                    <span style={{color: 'green'}}>Address: {row.road} {row.PO} <br />{row.city}</span>
                                     </TableCell>
                                 <TableCell align="right"><img style={{height:'100px', width:'125px', borderRadius: '20px'}} src={row.img} alt="" /></TableCell>
                                 <TableCell align="right">{row.productName}</TableCell>
