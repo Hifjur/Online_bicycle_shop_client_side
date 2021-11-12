@@ -8,6 +8,7 @@ import ListSubheader from '@mui/material/ListSubheader';
 import { Button, Grid, Typography } from '@mui/material';
 import SocialPanlePhoto from '../SocialPanelPhoto/SocialPanlePhoto';
 import { NavLink } from 'react-router-dom';
+import { Share } from '@mui/icons-material';
 
 
 const SocialPanel = () => {
@@ -38,7 +39,7 @@ const SocialPanel = () => {
                     ))}
                 </ImageList>
                 <NavLink style={{ textDecoration: 'none' }} to='/social'>
-                    <Button sx={{ backgroundColor: '#C54B47', m: 1 }} type="submit" variant="contained">Share Your Photo</Button>
+                    <Button sx={{ backgroundColor: '#C54B47', m: 1 }} type="submit" variant="contained"> <Share sx={{marginX:1}}/> Share Your Photo</Button>
                 </NavLink>
             </div>
         </Grid>

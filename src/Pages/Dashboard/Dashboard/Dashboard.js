@@ -58,6 +58,9 @@ function Dashboard(props) {
                     <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'white' }} to={`${url}/review`}>
                         <Button sx={{ backgroundColor: '#C54B47', }} color="inherit">Review</Button>
                     </NavLink>
+                    <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'white' }} to='/social'>
+                        <Button sx={{ backgroundColor: '#C54B47', }} color="inherit">Make Social Post</Button>
+                    </NavLink>
                 </Box>}
                 {admin && <Box>
                     <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'white' }} to={`${url}`}>

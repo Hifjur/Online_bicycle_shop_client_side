@@ -1,3 +1,4 @@
+import { Add } from '@mui/icons-material';
 import { Alert, Button, Container, TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
@@ -107,7 +108,7 @@ const AddBike = () => {
                     size="small"
                 />
                 <br />
-                <Button sx={{ backgroundColor: '#C54B47', m: 1 }} type="submit" variant="contained">Add To Database</Button>
+                <Button sx={{ backgroundColor: '#C54B47', m: 1 }} type="submit" variant="contained"> <Add sx={{marginX:1}}/> Add To Database</Button>
             </form>
             <NavLink style={{textDecoration:'none'}} to='/dashboard'>
             <Button sx={{margin: '20px'}} variant="outlined">Dashboard</Button>
