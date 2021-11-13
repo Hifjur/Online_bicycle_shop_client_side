@@ -54,7 +54,7 @@ const ManageAllOrders = () => {
     const handleDelete = orderId => {
         setSucsess(false);
         const id = { orderId }
-        if (window.confirm('Are you sure you want to delete this bike from database?')) {
+        if (window.confirm('Are you sure you want to delete this Order from database?')) {
 
             const url = `https://shrouded-tor-90105.herokuapp.com/orders`
             fetch(url, {

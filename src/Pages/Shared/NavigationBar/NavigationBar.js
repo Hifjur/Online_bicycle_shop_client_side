@@ -5,7 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-import { Login, Logout, Person } from '@mui/icons-material';
+import { Home, Login, Logout, Person } from '@mui/icons-material';
 import useAuth from '../../../Hooks/useAuth';
 import { NavLink } from 'react-router-dom';
 import NavBarPhone from '../NavbarPhone/NavbarPhone'
@@ -32,6 +32,10 @@ const Navigation = () => {
                     <Box style={{ display: { xs: 'block', md: 'hidden' } }}>
                         <NavBarPhone></NavBarPhone>
                     </Box>
+                    <NavLink style={{ alignContent: 'center', m: 2, display: { xs: 'inline', md: 'inline' }, textDecoration: 'none', color: 'white', }} to='/'>
+                        <Button sx={{ m: 2, display: { xs: 'none', md: 'inline' }, backgroundColor: 'rgb(35, 34, 34)', color: '#D3BDBD' }} variant="contained" color="inherit"><Home/>
+                        </Button>
+                    </NavLink>
                     <Typography variant="h6" component="div" sx={{ display: { xs: 'none', md: 'inline' }, m: 2, flexGrow: 1, color: "rgb(35, 34, 34)" }}>
                         Bikers Corner
                     </Typography>
@@ -39,6 +43,7 @@ const Navigation = () => {
                         <Button sx={{ m: 2, display: { xs: 'none', md: 'inline' }, backgroundColor: 'rgb(35, 34, 34)', color: '#D3BDBD' }} variant="contained" color="inherit">Explore
                         </Button>
                     </NavLink>
+                    
                     {
                         user?.email ?
                             <Box>

@@ -95,12 +95,7 @@ const AddPhoto = () => {
                 
                 <Button sx={{ backgroundColor: '#C54B47', m: 1 }} type="submit" variant="contained"><PostAdd/> Post Picture</Button>
             </form>
-            <NavLink style={{ textDecoration: 'none' }} to='/dashboard'>
-                <Button sx={{ margin: '20px' }} variant="outlined"><Dashboard/> Dashboard</Button>
-            </NavLink>
-            <NavLink style={{  margin: 3, textDecoration: 'none', color: 'white' }} to='/home'>
-                    <Button sx={{ margin: '20px' }} variant="outlined"><Home></Home>Home</Button>
-            </NavLink>
+            
         </Container>
     );
 };

@@ -5,7 +5,7 @@ import MenuItem from '@mui/material/MenuItem';
 import { NavLink } from 'react-router-dom';
 import { Box } from '@mui/system';
 import useAuth from '../../../Hooks/useAuth';
-import { Login, Logout, MenuOpen, Person } from '@mui/icons-material';
+import { Home, Login, Logout, MenuOpen, Person } from '@mui/icons-material';
 import { Typography } from '@mui/material';
 
 export default function BasicMenu() {
@@ -20,7 +20,7 @@ export default function BasicMenu() {
     };
 
     return (
-        <Box sx={{display: {xs:'block', md:'hidden'}}}>
+        <Box sx={{ display: { xs: 'block', md: 'hidden' } }}>
             <Button
                 id="basic-button"
                 aria-controls="basic-menu"
@@ -28,7 +28,7 @@ export default function BasicMenu() {
                 aria-expanded={open ? 'true' : undefined}
                 onClick={handleClick}
             >
-                <MenuOpen sx={{display: {xs:'block', md:'hidden'}}}/>
+                <MenuOpen sx={{ display: { xs: 'block', md: 'hidden' } }} />
             </Button>
             <Menu
                 id="basic-menu"
@@ -40,9 +40,10 @@ export default function BasicMenu() {
                 }}
             >
                 <MenuItem onClick={handleClose}><NavLink style={{ alignContent: 'center', m: 2, display: { xs: 'block', md: 'inline' }, textDecoration: 'none', color: 'white', }} to='/bikes'>
-                    <Button sx={{display: { xs: 'block', md: 'inline' }, backgroundColor: 'rgb(35, 34, 34)', color: '#D3BDBD' }} variant="contained" color="inherit">Explore
+                    <Button sx={{ display: { xs: 'block', md: 'inline' }, backgroundColor: 'rgb(35, 34, 34)', color: '#D3BDBD' }} variant="contained" color="inherit">Explore
                     </Button>
                 </NavLink></MenuItem>
+                
                 {user?.email ? <Box>
 
                     <MenuItem onClick={handleClose}><NavLink style={{ display: { xs: 'block', md: 'inline' }, m: 2, textDecoration: 'none', color: 'white' }} to='/dashboard'>
@@ -53,9 +54,7 @@ export default function BasicMenu() {
                         onClick={logout}
                         color="inherit"><Logout></Logout>
                     </Button></MenuItem>
-                    <MenuItem onClick={handleClose}><Typography variant="h6" sx={{ m: 2, display: { xs: 'none', md: 'hidden' }, backgroundColor: '#C54B47', borderBottom: '3px solid white', borderRadius: '10px', padding: '9px' }}>
-                        <Person /> {user.displayName}
-                    </Typography></MenuItem>
+
 
                 </Box>
                     : <Box>
