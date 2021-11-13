@@ -21,7 +21,7 @@ const Footer = () => {
         <div style={style} >
             <Container >
                 <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                    <Grid item xs={6}>
+                    <Grid item xs={12} sm={6}>
                         <Typography sx={{paddingY:4}} variant="h4">Contact us!</Typography>
                         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                             <Grid direction="column" align="left" item xs={6}>
@@ -31,7 +31,7 @@ const Footer = () => {
                                 <Twitter sx={{ marginX: 1 }} /> @bikerzcorner
                             </Grid>
                             <Grid direction="column" align="left" item xs={6}>
-                                <EmailOutlined sx={{ marginX: 1 }} /> bikerzcorner@biketown.com
+                                <EmailOutlined sx={{ marginX: 1 }} /> bikerz@bike.com
                             </Grid>
                             <Grid direction="column" align="left" item xs={6}>
                                 <PhoneAndroidOutlined sx={{ marginX: 1 }} /> +9968458245766
@@ -39,7 +39,7 @@ const Footer = () => {
                         </Grid>
 
                     </Grid>
-                    <Grid item xs={6}>
+                    <Grid item xs={12} sm={6}>
                         <Typography sx={{paddingY:4}} variant="h4">Address</Typography>
                         <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
                             <Grid direction="column" align="center" item xs={12}>

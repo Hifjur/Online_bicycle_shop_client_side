@@ -21,7 +21,7 @@ import DashboardHome from '../DashboardHome/DashboardHome';
 import useAuth from '../../../Hooks/useAuth';
 import AdminRoute from '../../Login/AdminRoute/AdminRoute';
 import MakeAdmin from '../MakeAdmin/MakeAdmin';
-import { Person } from '@mui/icons-material';
+import { Login, Logout, Person } from '@mui/icons-material';
 import AddBike from '../AddBike/AddBike';
 import ManageBikes from '../ManageBikes/ManageBikes';
 import PrivateRoute from '../../Login/PrivateRoute/PrivateRoute';
@@ -41,45 +41,45 @@ function Dashboard(props) {
     };
 
     const drawer = (
-        <div style={{ backgroundColor: 'rgb(35, 34, 34)', height: '100%' }}>
+        <Box style={{ backgroundColor: 'rgb(35, 34, 34)', height: '100%' }}>
             <Toolbar />
             <Divider />
             <div>
-                <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'white' }} to='/home'>
+                <NavLink style={{ display: 'block', marginY: 3, textDecoration: 'none', color: 'white' }} to='/home'>
                     <Button sx={{ backgroundColor: '#C54B47', color:'whtie'  }} color="inherit">Home Page</Button>
                 </NavLink>
                 {!admin && <Box>
-                    <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'white' }} to='/bikes'>
+                    <NavLink style={{ display: 'block', marginY: 3, textDecoration: 'none', color: 'white' }} to='/bikes'>
                         <Button sx={{ backgroundColor: '#C54B47', color:'whtie' }} color="inherit">Explore More</Button>
                     </NavLink>
-                    <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'white' }} to={`${url}`}>
+                    <NavLink style={{ display: 'block', marginY: 3, textDecoration: 'none', color: 'white' }} to={`${url}`}>
                         <Button sx={{ backgroundColor: '#C54B47', color:'whtie' }} color="inherit">My Orders</Button>
                     </NavLink>
-                    <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'white' }} to={`${url}/review`}>
+                    <NavLink style={{ display: 'block', marginY: 3, textDecoration: 'none', color: 'white' }} to={`${url}/review`}>
                         <Button sx={{ backgroundColor: '#C54B47', color:'whtie' }} color="inherit">Review</Button>
                     </NavLink>
-                    <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'white' }} to='/social'>
+                    <NavLink style={{ display: 'block', marginY: 3, textDecoration: 'none', color: 'white' }} to='/social'>
                         <Button sx={{ backgroundColor: '#C54B47',color:'whtie'  }} color="inherit">Make Social Post</Button>
                     </NavLink>
                 </Box>}
                 {admin && <Box>
-                    <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'white' }} to={`${url}`}>
+                    <NavLink style={{ display: 'block', marginY: 3, textDecoration: 'none', color: 'white' }} to={`${url}`}>
                         <Button sx={{ backgroundColor: '#C54B47',color:'whtie'  }} color="inherit">Mange All Orders</Button>
                     </NavLink>
-                    <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'white' }} to={`${url}/makeAdmin`}>
+                    <NavLink style={{ display: 'block', marginY: 3, textDecoration: 'none', color: 'white' }} to={`${url}/makeAdmin`}>
                         <Button sx={{ backgroundColor: '#C54B47',color:'whtie'  }} color="inherit">Make Admin</Button>
                     </NavLink>
-                    <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'white' }} to={`${url}/addproducts`}>
+                    <NavLink style={{ display: 'block', marginY: 3, textDecoration: 'none', color: 'white' }} to={`${url}/addproducts`}>
                         <Button sx={{ backgroundColor: '#C54B47', color:'whtie' }} color="inherit">Add Bike</Button>
                     </NavLink>
-                    <NavLink style={{ display: 'block', margin: 3, textDecoration: 'none', color: 'white' }} to={`${url}/manageproducts`}>
+                    <NavLink style={{ display: 'block', marginY: 3, textDecoration: 'none', color: 'white' }} to={`${url}/manageproducts`}>
                         <Button sx={{ backgroundColor: '#C54B47',color:'whtie'  }} color="inherit">Manage Bikes</Button>
                     </NavLink>
 
 
                 </Box>}
             </div>
-        </div>
+        </Box>
     );
 
     const container = window !== undefined ? () => window().document.body : undefined;
@@ -92,7 +92,9 @@ function Dashboard(props) {
                 sx={{
                     width: { sm: `calc(100% - ${drawerWidth}px)` },
                     ml: { sm: `${drawerWidth}px` },
-                    backgroundColor: 'rgb(35, 34, 34)'
+                    backgroundColor: 'rgb(35, 34, 34)',
+                    paddingY:1,
+                   
                 }}
             >
                 <Toolbar>
@@ -111,17 +113,17 @@ function Dashboard(props) {
                     {
                         user?.email ?
                             <Box>
-                                <Typography variant="h6" sx={{ display: 'inline', backgroundColor: '#C54B47', borderBottom: '3px solid white', borderRadius: '10px', padding: '9px', margin: '3px' }}>
+                                <Typography variant="h6" sx={{ display: 'inline', backgroundColor: '#C54B47', borderBottom: '3px solid white', borderRadius: '10px', padding: '9px', marginY: '3px' }}>
                                     <Person /> {user.displayName}
                                 </Typography>
                                 <Button
-                                    sx={{ backgroundColor: 'rgb(35, 34, 34)', color: '#D3BDBD' }} variant="contained"
+                                    sx={{ backgroundColor: 'rgb(35, 34, 34)', color: '#D3BDBD',m:2 }} variant="contained"
                                     onClick={logout}
-                                    color="inherit">Logout</Button>
+                                    color="inherit"><Logout></Logout></Button>
                             </Box>
                             :
-                            <NavLink style={{ textDecoration: 'none', color: 'white' }} to='/login'>
-                                <Button color="inherit">Login</Button>
+                            <NavLink style={{ textDecoration: 'none', color: 'white', m:2 }} to='/login'>
+                                <Button color="inherit"><Login/></Button>
                             </NavLink>
                     }
                 </Toolbar>
