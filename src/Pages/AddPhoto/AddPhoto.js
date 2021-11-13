@@ -1,7 +1,7 @@
-import { Dashboard, Home, PostAdd } from '@mui/icons-material';
+import {  PostAdd } from '@mui/icons-material';
 import { Alert, Button, Container,TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+
 import useAuth from '../../Hooks/useAuth';
 
 const AddPhoto = () => {

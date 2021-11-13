@@ -5,8 +5,8 @@ import MenuItem from '@mui/material/MenuItem';
 import { NavLink } from 'react-router-dom';
 import { Box } from '@mui/system';
 import useAuth from '../../../Hooks/useAuth';
-import { Home, Login, Logout, MenuOpen, Person } from '@mui/icons-material';
-import { Typography } from '@mui/material';
+import {  Login, Logout, MenuOpen } from '@mui/icons-material';
+
 
 export default function BasicMenu() {
     const { user, logout } = useAuth();
