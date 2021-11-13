@@ -62,6 +62,8 @@ const useFirebase = () => {
                 const user = result.user;
                 setError('');
                 saveUser(user.email, user.displayName, 'PUT');
+                const destination = location?.state?.from || '/';
+                history.replace(destination);
                 
             }).catch((error) => {
                 setError(error.message);
