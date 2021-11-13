@@ -1,4 +1,5 @@
-import { Button, TextField, Alert, Typography, Container } from '@mui/material';
+import { Button, TextField, Alert, Typography, Container, CardMedia, Card, Grid } from '@mui/material';
+import { margin } from '@mui/system';
 import React, { useEffect, useState } from 'react';
 import { useHistory, useParams } from 'react-router';
 import { NavLink } from 'react-router-dom';
@@ -63,7 +64,25 @@ const Purchase = () => {
     }
     return (
         <Container>
-            <img style={{margin: '20px', borderRadius:'20px'}} src={img} alt="" />
+            <Grid container spacing={2}>
+                <Grid item xs={12}>
+                    
+                        <CardMedia
+                            component="img"
+                            alt="green iguana"
+                           
+                            sx={{width:{md:400,xs:300}, alignItems:'center',
+                            marginX:'auto',
+                            height:{md:300,xs:200},
+                        borderRadius:'20px',
+                    marginY:2}}
+
+                            image={img}
+                        />
+                    
+                </Grid>
+            </Grid>
+
             <Typography sx={{ color: '#C54B47', fontWeight: 'medium' }} gutterBottom variant="h5" component="div">
                 {name}
             </Typography>
@@ -73,14 +92,14 @@ const Purchase = () => {
             <Typography variant="body1" sx={{ color: 'green', fontWeight: 'bold' }}>
                 {catagory} Bike
             </Typography>
-            <Typography sx={{ color: '#C54B47', fontWeight: 'medium' , fontSize:'30px' }} variant="body2" color="text.secondary">
+            <Typography sx={{ color: '#C54B47', fontWeight: 'medium', fontSize: '30px' }} variant="body2" color="text.secondary">
                 Price: ${price}
             </Typography>
 
 
             {purchaseComplete && <Alert severity="success">Purchased Successfully</Alert>}
 
-            <form style={{backgroundColor: 'white', paddingTop: '20px', borderRadius:'30px'}} onSubmit={handleOrderConfirmation}>
+            <form style={{ backgroundColor: 'white', paddingTop: '20px', borderRadius: '30px' }} onSubmit={handleOrderConfirmation}>
 
                 <TextField
                     sx={{ width: '70%', m: 1 }}
@@ -146,8 +165,8 @@ const Purchase = () => {
                 <br />
                 <Button sx={{ backgroundColor: '#C54B47', m: 1 }} type="submit" variant="contained">Payment</Button>
             </form>
-            <NavLink style={{textDecoration:'none'}} to='/'>
-            <Button sx={{margin: '20px'}} variant="outlined">Explore more bikes</Button>
+            <NavLink style={{ textDecoration: 'none' }} to='/'>
+                <Button sx={{ margin: '20px' }} variant="outlined">Explore more bikes</Button>
             </NavLink>
         </Container>
     );

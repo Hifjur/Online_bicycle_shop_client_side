@@ -1,4 +1,4 @@
-import { Container, Grid } from '@mui/material';
+import { Container, Grid, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import Bike from '../Bike/Bike';
 import NavigationBar from '../NavigationBar/NavigationBar';
@@ -17,7 +17,7 @@ const Bikes = () => {
         <>
         <NavigationBar></NavigationBar>
             <Container>
-                <h2>bikes</h2>
+            <Typography variant="h1" sx={{ fontWeight: 500, paddingY: '30px',fontSize:{xs:40, md:100}, color: 'white', marginTop: 3, backgroundColor: 'rgb(35, 34, 34)' }}>BIKES</Typography>
                 <Grid container rowSpacing={1} columnSpacing={{ xs: 2, sm: 3, md: 4 }}>
 
                     {

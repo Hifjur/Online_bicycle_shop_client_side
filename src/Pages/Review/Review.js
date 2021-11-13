@@ -47,7 +47,7 @@ const Review = () => {
         <Container>
 
 
-            <Typography variant="h1" sx={{ fontWeight: 500, paddingY: '30px', color: 'white', marginTop: 3, backgroundColor: 'rgb(35, 34, 34)' }}>Leave A Review</Typography>
+            <Typography variant="h1" sx={{ fontWeight: 500, paddingY: '30px',fontSize:{xs:40, md:100}, color: 'white', marginTop: 3, backgroundColor: 'rgb(35, 34, 34)' }}>Leave A Review</Typography>
 
             {reviewAdded && <Alert severity="success">Posted Successfully</Alert>}
 

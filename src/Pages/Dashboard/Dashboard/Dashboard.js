@@ -26,6 +26,7 @@ import AddBike from '../AddBike/AddBike';
 import ManageBikes from '../ManageBikes/ManageBikes';
 import PrivateRoute from '../../Login/PrivateRoute/PrivateRoute';
 import Review from '../../Review/Review';
+import AddPhoto from '../../AddPhoto/AddPhoto';
 
 
 const drawerWidth = 240;
@@ -58,7 +59,7 @@ function Dashboard(props) {
                     <NavLink style={{ display: 'block', marginY: 3, textDecoration: 'none', color: 'white' }} to={`${url}/review`}>
                         <Button sx={{ backgroundColor: '#C54B47', color:'whtie' }} color="inherit">Review</Button>
                     </NavLink>
-                    <NavLink style={{ display: 'block', marginY: 3, textDecoration: 'none', color: 'white' }} to='/social'>
+                    <NavLink style={{ display: 'block', marginY: 3, textDecoration: 'none', color: 'white' }} to={`${url}/social`}>
                         <Button sx={{ backgroundColor: '#C54B47',color:'whtie'  }} color="inherit">Make Social Post</Button>
                     </NavLink>
                 </Box>}
@@ -175,6 +176,9 @@ function Dashboard(props) {
 
                     <PrivateRoute path={`${path}/review`}>
                         <Review></Review>
+                    </PrivateRoute>
+                    <PrivateRoute path={`${path}/social`}>
+                        <AddPhoto></AddPhoto>
                     </PrivateRoute>
                     <AdminRoute path={`${path}/makeAdmin`}>
                         <MakeAdmin></MakeAdmin>

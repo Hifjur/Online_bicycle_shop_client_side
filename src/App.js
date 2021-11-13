@@ -42,11 +42,7 @@ function App() {
             </Route>
             <PrivateRoute path="/dashboard">
               <Dashboard />
-            </PrivateRoute>
-            <PrivateRoute path="/social">
-              <AddPhoto></AddPhoto>
-            </PrivateRoute>
-            
+            </PrivateRoute>            
             <PrivateRoute path="/purchase/:_id">
               <Purchase />
             </PrivateRoute>

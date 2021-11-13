@@ -1,5 +1,5 @@
 import { Dashboard, Home, PostAdd } from '@mui/icons-material';
-import { Alert, Button, Container, Rating, TextField, Typography } from '@mui/material';
+import { Alert, Button, Container,TextField, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
@@ -44,7 +44,7 @@ const AddPhoto = () => {
         <Container>
 
 
-            <Typography variant="h1" sx={{ fontWeight: 500, padding: '30px', color: 'white', marginTop: 3, backgroundColor: 'rgb(35, 34, 34)' }}>MAKE A POST</Typography>
+            <Typography variant="h1" sx={{ fontWeight: 500, padding: '30px', color: 'white', marginTop: 3, backgroundColor: 'rgb(35, 34, 34)',fontSize:{xs:40, md:100} }}>MAKE A POST</Typography>
 
             {photoAdded && <Alert severity="success">Posted Successfully</Alert>}
 

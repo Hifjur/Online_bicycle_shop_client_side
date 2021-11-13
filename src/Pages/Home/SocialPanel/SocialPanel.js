@@ -38,7 +38,7 @@ const SocialPanel = () => {
                         <SocialPanlePhoto item={item}></SocialPanlePhoto>
                     ))}
                 </ImageList>
-                <NavLink style={{ textDecoration: 'none' }} to='/social'>
+                <NavLink style={{ textDecoration: 'none' }} to='/dashboard/social'>
                     <Button sx={{ backgroundColor: '#C54B47', m: 1 }} type="submit" variant="contained"> <Share sx={{marginX:1}}/> Share Your Photo</Button>
                 </NavLink>
             </div>

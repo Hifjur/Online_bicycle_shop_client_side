@@ -35,7 +35,7 @@ const Register = () => {
                     </Typography>
                     {
                         !isLoading &&
-                        <form style={{height:'500px'}}onSubmit={handleLoginSubmit}>
+                        <form style={{ height: '400px' }} onSubmit={handleLoginSubmit}>
                             <TextField
                                 sx={{ width: '75%', m: 1 }}
                                 id="standard-basic"
@@ -67,7 +67,7 @@ const Register = () => {
                                 name="password2"
                                 onBlur={handleOnBlur}
                                 variant="standard" />
-                            <Button sx={{ backgroundColor: '#C54B47',color:'whtie',width: '75%' }} type="submit" color="inherit">Register</Button> <br />
+                            <Button sx={{ backgroundColor: '#C54B47', color: 'whtie', width: '75%' }} type="submit" color="inherit">Register</Button> <br />
                             <NavLink
                                 style={{ textDecoration: 'none' }}
                                 to="/login">
@@ -77,8 +77,15 @@ const Register = () => {
                     {isLoading && <CircularProgress />}
                     {user?.email && <Alert severity="success">Account Creation Successful</Alert>}
                     {error && <Alert severity="error">{error}</Alert>}
+                    <NavLink style={{ display: 'block', marginY: 3, textDecoration: 'none', color: 'white' }} to='/home'>
+                        <Button sx={{
+                            marginY: 2,
+                            padding: 2,
+                            backgroundColor: '#C54B47', color: 'whtie'
+                        }} color="inherit">Home Page</Button>
+                    </NavLink>
                 </Grid>
-                
+
             </Grid>
         </Container>
     );
