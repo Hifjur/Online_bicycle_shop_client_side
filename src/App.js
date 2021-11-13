@@ -15,11 +15,7 @@ import Footer from "./Pages/Shared/Footer/Footer";
 import Purchase from "./Pages/Purchase/Purchase";
 import Payment from "./Pages/Payment/Payment";
 
-import Orders from "./Pages/Dashboard/Oders/Orders";
 import Dashboard from "./Pages/Dashboard/Dashboard/Dashboard";
-import AdminRoute from "./Pages/Login/AdminRoute/AdminRoute";
-import AddProducts from "./Pages/Dashboard/AddProducts/AddProducts";
-import AddPhoto from "./Pages/AddPhoto/AddPhoto";
 
 function App() {
   return (
