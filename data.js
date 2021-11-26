@@ -38,7 +38,7 @@ const data = [
     {
         key:"04",
         name:"Ivory Light",
-        description: "",
+        description: "Light wight fast bike",
         price:5000,
         img:"https://i.ibb.co/ZWsFfkw/04.jpg",
         catagory: "Race"
