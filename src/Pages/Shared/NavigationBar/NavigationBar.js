@@ -5,10 +5,9 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
-import { Home, Login, Logout, Person } from '@mui/icons-material';
+import { Home, Login, Logout, PedalBike, Person } from '@mui/icons-material';
 import useAuth from '../../../Hooks/useAuth';
 import { NavLink } from 'react-router-dom';
-import NavBarPhone from '../NavbarPhone/NavbarPhone'
 import { Menu, MenuItem } from '@mui/material';
 import menueIcon from "../../../images/menu_white_24dp.svg";
 
@@ -110,9 +109,10 @@ const Navigation = () => {
         )}
       </Menu>
                     </Box>
-                    <NavLink style={{ alignContent: 'center', m: 2, display: { xs: 'inline', md: 'inline' }, textDecoration: 'none', color: 'white', }} to='/'>
-                        <Button sx={{ m: 2, display: { xs: 'none', md: 'inline' }, backgroundColor: 'rgb(35, 34, 34)', color: '#D3BDBD' }} variant="contained" color="inherit"><Home/>
-                        </Button>
+                    <NavLink style={{ fontSize:20, fontWeight:'bolder', alignContent: 'center', m: 2, display: { xs: 'inline', md: 'inline' }, textDecoration: 'none', color: '#D3BDBD', }} to='/'>
+                    <PedalBike/> CORNER
+                        {/* <Button sx={{ m: 2, display: { xs: 'none', md: 'inline' }, backgroundColor: 'rgb(35, 34, 34)', color: '#D3BDBD' }} variant="contained" color="inherit">
+                        </Button> */}
                     </NavLink>
                     <Typography variant="h6" component="div" sx={{ display: { xs: 'none', md: 'inline' }, m: 2, flexGrow: 1, color: "rgb(35, 34, 34)" }}>
                         Bikers Corner
