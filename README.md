@@ -10,4 +10,5 @@
 * Admin can see orders from everyone and mark them as shipped. Admin can also delete orders and bikes from database using dashboard
 * Admin can add new products and they will apear on explore page.
 * User can post reviews that will apear on homepage and user can also take part in the social show case where they can post picture of their rides. The pictures will appear on the Customer's Corner.
-* Website is resposive for mobile and computer.
+* Website is fully resposive for mobile device and computer.
+* New Icons added using matarial UI.
